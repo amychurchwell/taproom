@@ -19,8 +19,8 @@ export class AppComponent {
     this.selectedKeg = clickedKeg;
   }
 
-  sellPint(Keg) {
-    Keg.pintsRemaining = Keg.pintsRemaining - 1;
+  sellPint(keg) {
+    keg.pintsRemaining = keg.pintsRemaining - 1;
   }
 
   tapKeg(){
@@ -29,14 +29,14 @@ export class AppComponent {
     this.selectedKeg = newKeg;
   }
 
-  pintsLeft(Keg){
-    if(Keg.pintsRemaining < 10){
-      return "bg-warning";
+  pintsLeft(keg){
+    if(keg.pintsRemaining < 100){
+      return "running-low";
     }
   }
 }
 
-//[class]="pintsLeft(Keg)"
+//
 
 export class Keg {
   public pintsRemaining: number = 124;

@@ -1,3 +1,7 @@
 .keg{
   padding: 10px;
 }
+
+.running-low {
+  background-color: pink;
+}

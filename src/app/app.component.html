@@ -4,7 +4,7 @@
   </h1>
   <div class="row">
     <div class="col-md-4" *ngFor="let keg of kegs">
-      <div class="card keg">
+      <div class="card keg" [class.running-low]="pintsLeft(keg)" >
         <div class="card-body">
           <h5 class="card-title">{{keg.name}}</h5>
           <ul class="list-group list-group-flush">
