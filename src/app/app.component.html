@@ -12,5 +12,12 @@
           <li class="list-group-item">{{keg.alcoholContent}}% ABV</li>
         </ul>
       </div>
+      <button (click)="editKeg(keg)" class="btn btn-dark btn-sm">Edit</button>
+    </div>
+    <hr>
+    <div *ngIf="selectedKeg">
+      <h3>Edit Keg</h3>
+      <label>Enter name:</label>
+      <input [(ngModel)]="selectedKeg.name">
     </div>
   </div>
