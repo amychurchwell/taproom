@@ -14,10 +14,27 @@
       </div>
       <button (click)="editKeg(keg)" class="btn btn-dark btn-sm">Edit</button>
     </div>
-    <hr>
-    <div *ngIf="selectedKeg">
+  </div>
+  <div class="row">
+    <div class="col-md-12" *ngIf="selectedKeg">
       <h3>Edit Keg</h3>
-      <label>Enter name:</label>
-      <input [(ngModel)]="selectedKeg.name">
+      <div class="form-group">
+        <label>Enter name:</label>
+        <input [(ngModel)]="selectedKeg.name">
+      </div>
+      <div class="form-group">
+        <label>Price per pint:</label>
+        <input [(ngModel)]="selectedKeg.pintPrice">
+      </div>
+      <div class="form-group">
+        <label>Brand:</label>
+        <input [(ngModel)]="selectedKeg.brand">
+      </div>
+      <div class="form-group">
+        <label>ABV:</label>
+        <input [(ngModel)]="selectedKeg.alcoholContent">
+      </div>
+      <button (click)="editKeg(null)">Done</button>
     </div>
+  </div>
   </div>
