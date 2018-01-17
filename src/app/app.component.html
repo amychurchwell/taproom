@@ -10,7 +10,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item" [ngClass]="pricePerPint(keg)">£{{keg.pintPrice}}</li>
             <li class="list-group-item">{{keg.brand}}</li>
-            <li class="list-group-item">{{keg.alcoholContent}}% ABV</li>
+            <li class="list-group-item" [ngClass]="alcoholAmount(keg)">{{keg.alcoholContent}}% ABV</li>
             <li class="list-group-item" [class.running-low]="pintsLeft(keg)">{{keg.pintsRemaining}} pints remaining.</li>
           </ul>
         </div>

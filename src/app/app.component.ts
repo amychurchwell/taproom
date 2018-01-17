@@ -44,6 +44,16 @@ export class AppComponent {
       return "bg-danger";
     }
   }
+
+  alcoholAmount(keg){
+    if(keg.alcoholContent < 20){
+      return "bg-success";
+    }else if (keg.alcoholContent < 100){
+      return "bg-warning";
+    }else {
+      return "bg-danger";
+    }
+  }
 }
 
 //
