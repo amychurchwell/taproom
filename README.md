@@ -29,9 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Requirements
 
 - [ ] As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
- 
+
 - [ ] As an employee, I want to fill out a form when I tap a new keg to add it to the list. (Don't worry about authenticating employee user accounts yet.)
-As an employee, I want the option to edit a keg's properties after entering them just in case I make a mistake.
+
+- [ ] As an employee, I want the option to edit a keg's properties after entering them just in case I make a mistake.
 
 - [ ] As a patron and/or employee, I want to see how many pints are left in a keg. (Hint: A full keg has roughly 124 pints).
 

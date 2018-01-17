@@ -3,18 +3,27 @@
     Welcome to {{ title }}!
   </h1>
   <div class="row">
-    <div class="card col-md-4" *ngFor="let keg of kegs">
-      <div class="card-body">
-        <h5 class="card-title">{{keg.name}}</h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">£{{keg.pintPrice}}</li>
-          <li class="list-group-item">{{keg.brand}}</li>
-          <li class="list-group-item">{{keg.alcoholContent}}% ABV</li>
-        </ul>
+    <div class="col-md-4" *ngFor="let keg of kegs">
+      <div class="card keg">
+        <div class="card-body">
+          <h5 class="card-title">{{keg.name}}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">£{{keg.pintPrice}}</li>
+            <li class="list-group-item">{{keg.brand}}</li>
+            <li class="list-group-item">{{keg.alcoholContent}}% ABV</li>
+            <li class="list-group-item">{{keg.pintsRemaining}} pints remaining.</li>
+          </ul>
+        </div>
+        <button (click)="editKeg(keg)" class="btn btn-dark btn-sm">Edit</button>
+        <button (click)="sellPint(keg)" class="btn btn-info btn-sm">Sell a pint</button>
       </div>
-      <button (click)="editKeg(keg)" class="btn btn-dark btn-sm">Edit</button>
     </div>
+  </div><!--end of kegs row-->
+  <hr>
+  <div class="row">
+    <button (click)="tapKeg()" class="btn btn-primary btn-sm">Tap New Keg</button>
   </div>
+
   <div class="row">
     <div class="col-md-12" *ngIf="selectedKeg">
       <h3>Edit Keg</h3>
@@ -24,7 +33,7 @@
       </div>
       <div class="form-group">
         <label>Price per pint:</label>
-        <input [(ngModel)]="selectedKeg.pintPrice">
+        <input [(ngModel)]="selectedKeg.pintPrice" >
       </div>
       <div class="form-group">
         <label>Brand:</label>
@@ -34,7 +43,11 @@
         <label>ABV:</label>
         <input [(ngModel)]="selectedKeg.alcoholContent">
       </div>
+      <!-- <div class="form-group">
+        <label>Pints Remaining:</label>
+        <input [(ngModel)]="selectedKeg.pintsRemaining">
+      </div> -->
       <button (click)="editKeg(null)">Done</button>
     </div>
-  </div>
+  </div><!-- end of edit form row -->
   </div>

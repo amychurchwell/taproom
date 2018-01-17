@@ -18,7 +18,25 @@ export class AppComponent {
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
+
+  sellPint(Keg) {
+    Keg.pintsRemaining = Keg.pintsRemaining - 1;
+  }
+
+  tapKeg(){
+    const newKeg: Keg = new Keg('', 0, 0, '');
+    this.kegs.push(newKeg);
+    this.selectedKeg = newKeg;
+  }
+
+  pintsLeft(Keg){
+    if(Keg.pintsRemaining < 10){
+      return "bg-warning";
+    }
+  }
 }
+
+//[class]="pintsLeft(Keg)"
 
 export class Keg {
   public pintsRemaining: number = 124;
