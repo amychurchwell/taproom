@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Taproom';
   kegs: Keg[] = [
     new Keg('Butterbeer', 200, 20, `HufflePuff`),
-    new Keg('Dragon\'s Breath', 500, 5, 'Spielburg Cellars'),
+    new Keg(`Dragon's Breath` , 500, 5, 'Spielburg Cellars'),
     new Keg('Fireball', 10, 2, 'Volcano vineyards on a volcano'),
     new Keg('Motor Oil', 0, 6, 'Mobil')
   ];
@@ -30,8 +30,18 @@ export class AppComponent {
   }
 
   pintsLeft(keg){
-    if(keg.pintsRemaining < 100){
+    if(keg.pintsRemaining < 120){
       return "running-low";
+    }
+  }
+
+  pricePerPint(keg){
+    if(keg.pintPrice < 5){
+      return "bg-success";
+    }else if (keg.pintPrice < 10){
+      return "bg-warning";
+    }else {
+      return "bg-danger";
     }
   }
 }

@@ -4,14 +4,14 @@
   </h1>
   <div class="row">
     <div class="col-md-4" *ngFor="let keg of kegs">
-      <div class="card keg" [class.running-low]="pintsLeft(keg)" >
+      <div class="card keg" >
         <div class="card-body">
           <h5 class="card-title">{{keg.name}}</h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">£{{keg.pintPrice}}</li>
+            <li class="list-group-item" [ngClass]="pricePerPint(keg)">£{{keg.pintPrice}}</li>
             <li class="list-group-item">{{keg.brand}}</li>
             <li class="list-group-item">{{keg.alcoholContent}}% ABV</li>
-            <li class="list-group-item">{{keg.pintsRemaining}} pints remaining.</li>
+            <li class="list-group-item" [class.running-low]="pintsLeft(keg)">{{keg.pintsRemaining}} pints remaining.</li>
           </ul>
         </div>
         <button (click)="editKeg(keg)" class="btn btn-dark btn-sm">Edit</button>

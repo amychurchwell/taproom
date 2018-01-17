@@ -1,7 +1,15 @@
+.col-md-4{
+  margin-bottom: 15px;
+}
+
 .keg{
   padding: 10px;
+  height: 100%;
 }
 
 .running-low {
-  background-color: pink;
+  background-color: #ffc107;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 4px 0px rgba(0,0,0, 0.2);
 }
